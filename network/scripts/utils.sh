@@ -225,12 +225,12 @@ chaincodeInvoke() {
   # it using the "-o" option
   if [ -z "$CORE_PEER_TLS_ENABLED" -o "$CORE_PEER_TLS_ENABLED" = "false" ]; then
     set -x
-    peer chaincode invoke -o orderer.certification-network.com:7050 -C $CHANNEL_NAME -n certnet $PEER_CONN_PARMS -c '{"Args":["org.certification-network.certnet:createStudent","0001","Sushma Varadaiah","sushmarajuvaradaiah@gmail.com","15"]}' >&log.txt
+    peer chaincode invoke -o orderer.certification-network.com:7050 -C $CHANNEL_NAME -n certnet $PEER_CONN_PARMS -c '{"Args":["org.certification-network.certnet:createStudent","0001","Aman Kumar","aman.kumar1812.svs@gmail.com","15"]}' >&log.txt
     res=$?
     set +x
   else
     set -x
-    peer chaincode invoke -o orderer.certification-network.com:7050 --tls $CORE_PEER_TLS_ENABLED --cafile $ORDERER_CA -C $CHANNEL_NAME -n certnet $PEER_CONN_PARMS -c '{"Args":["org.certification-network.certnet:createStudent","0001","Sushma Varadaiah","sushmarajuvaradaiah@gmail.com"]}' >&log.txt
+    peer chaincode invoke -o orderer.certification-network.com:7050 --tls $CORE_PEER_TLS_ENABLED --cafile $ORDERER_CA -C $CHANNEL_NAME -n certnet $PEER_CONN_PARMS -c '{"Args":["org.certification-network.certnet:createStudent","0001","Aman Kumar","aman.kumar1812.svs@gmail.com"]}' >&log.txt
     res=$?
     set +x
   fi
